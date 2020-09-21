@@ -10,7 +10,7 @@ var fr;
 var particles = [];
 
 var flowfield;
-
+let test;
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -21,7 +21,7 @@ function setup() {
     cols = floor(width/scl);
     rows = floor(height/scl);
     fr = createP('');
-
+    test = createSlider(1,6,4,.5);
     flowfield = new Array(cols * rows);
 
     for(var i = 0; i < 500; i++){
@@ -34,12 +34,13 @@ function setup() {
 function draw() {
     
     randomSeed(10);
+    let val = test.value();
     var yoff = 0;
     for(var x = 0; x < cols; x++){
         var xoff = 0;
        for(var y = 0; y < rows; y++){
             var index = x + y * cols;
-            var angle = noise(xoff, yoff, zoff) * TWO_PI * 4;
+            var angle = noise(xoff, yoff, zoff) * TWO_PI * val;
             var v = p5.Vector.fromAngle(angle);
             v.setMag(1);
             flowfield[index] = v;
