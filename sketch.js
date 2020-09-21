@@ -1,5 +1,5 @@
 
-var inc = 0.1;
+var inc = .1;
 var scl = 10;
 var cols, rows;
 
@@ -10,7 +10,7 @@ var fr,freq_text;
 var particles = [];
 var pause = 0;
 var flowfield;
-let test, button_clear, button_pause, button_save, gitLink, info; //UI Elements
+let noise_freq, noise_scale, button_clear, button_pause, button_save, gitLink, info; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -26,7 +26,9 @@ function setup() {
     info = createP('Save Frame option only works on single frames for now. Pause the sim before saving for accuracy. <br> Credits: Aryan Sachdeva');
     info.position(10,770);
     
-    test = createSlider(1,6,4,.5);
+    noise_freq = createSlider(1,6,4,.5);
+    noise_scale = createSlider(.001,.5,.1,.10);
+    
 
     button_clear = createButton('Reset Sim');
     button_clear.mousePressed(clearScreen);
@@ -53,7 +55,8 @@ function setup() {
 function draw() {
     
     randomSeed(10);
-    let val = test.value();
+    inc = noise_scale.value();
+    let val = noise_freq.value();
     var yoff = 0;
     for(var x = 0; x < cols; x++){
         var xoff = 0;
