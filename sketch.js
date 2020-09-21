@@ -10,7 +10,7 @@ var fr,freq_text;
 var particles = [];
 
 var flowfield;
-let test, button; //UI Elements
+let test, button, gitLink; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -23,11 +23,14 @@ function setup() {
     
     fr = createP('');
     freq_text = createP('Frequency Slider');
-
+    
     test = createSlider(1,6,4,.5);
 
     button = createButton('Reset Sim');
     button.mousePressed(clearScreen);
+
+    gitLink = createA("https://github.com/aaryansachdeva/website_test","Link to Repo!","_blank");
+    gitLink.position(10,750);
 
     flowfield = new Array(cols * rows);
 
@@ -72,7 +75,6 @@ function draw() {
 
 
     fr.html("Framerate " + floor(frameRate()));
-
     
     /*if (frameCount < gifLength) {
 		capturer.capture(canvas);
