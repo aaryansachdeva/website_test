@@ -8,9 +8,9 @@ var zoff = 0;
 var fr,freq_text;
 
 var particles = [];
-
+var pause = 0;
 var flowfield;
-let test, button, gitLink; //UI Elements
+let test, button_clear, button_pause, gitLink; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -26,15 +26,19 @@ function setup() {
     
     test = createSlider(1,6,4,.5);
 
-    button = createButton('Reset Sim');
-    button.mousePressed(clearScreen);
+    button_clear = createButton('Reset Sim');
+    button_clear.mousePressed(clearScreen);
+
+    button_pause = createButton('Pause Sim');
+    button_pause.mousePressed(pauseScreen);
+    
 
     gitLink = createA("https://github.com/aaryansachdeva/website_test","Link to Repo!","_blank");
     gitLink.position(10,750);
 
     flowfield = new Array(cols * rows);
 
-    for(var i = 0; i < 500; i++){
+    for(var i = 0; i < 1000; i++){
         particles[i] = new Particle();
     }
     background(255);
@@ -55,7 +59,7 @@ function draw() {
             v.setMag(1);
             flowfield[index] = v;
             xoff += inc;
-            stroke(0,80);
+            stroke(0,50);
             //push();
             //translate(x * scl, y * scl);
             //rotate(v.heading());
@@ -88,4 +92,17 @@ function draw() {
 
 function clearScreen() {
     background(255);
+}
+
+function pauseScreen() {
+    if(pause === 0) {
+        noLoop();
+        pause = 1;
+    }
+    else if(pause === 1) {
+        loop();
+        pause = 0;
+    }
+
+    
 }
