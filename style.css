@@ -11,7 +11,7 @@ body, html {
   }
 
 #main_div   {
-    position: fixed;
+    
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -25,6 +25,6 @@ body, html {
     font-size: 40px;
 }
 
-p   {
+p.framerate   {
     color: beige;
 }
