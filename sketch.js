@@ -10,7 +10,7 @@ var fr,freq_text;
 var particles = [];
 var pause = 0;
 var flowfield;
-let test, button_clear, button_pause, gitLink; //UI Elements
+let test, button_clear, button_pause, button_save, gitLink; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -31,6 +31,9 @@ function setup() {
 
     button_pause = createButton('Pause Sim');
     button_pause.mousePressed(pauseScreen);
+
+    button_save = createButton('Save Frame');
+    button_save.mousePressed(saveFrame);
     
 
     gitLink = createA("https://github.com/aaryansachdeva/website_test","Link to Repo!","_blank");
@@ -105,4 +108,8 @@ function pauseScreen() {
     }
 
     
+}
+
+function saveFrame() {
+    saveFrames("frame01", "jpg", 1, 1);
 }
