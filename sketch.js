@@ -24,7 +24,7 @@ function setup() {
     fr = createP('');
     freq_text = createP('Frequency Slider');
     info = createP('Save Frame option only works on single frames for now. Pause the sim before saving for accuracy. <br> Credits: Aryan Sachdeva');
-    info.position(10,800);
+    info.position(10,770);
     
     test = createSlider(1,6,4,.5);
 
