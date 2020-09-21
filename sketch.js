@@ -14,7 +14,7 @@ var flowfield;
 //let canvas;
 //let gifLength = 2000;
 function setup() {
-    createCanvas(1920,1080); //add var p5Canvas = (for saving)
+    createCanvas(600,600); //add var p5Canvas = (for saving)
 	//canvas = p5Canvas.canvas;
 
 	//capturer.start();
@@ -24,7 +24,7 @@ function setup() {
 
     flowfield = new Array(cols * rows);
 
-    for(var i = 0; i < 100; i++){
+    for(var i = 0; i < 500; i++){
         particles[i] = new Particle();
     }
     background(255);
