@@ -10,7 +10,7 @@ var fr,freq_text;
 var particles = [];
 var pause = 0;
 var flowfield;
-let test, button_clear, button_pause, button_save, gitLink; //UI Elements
+let test, button_clear, button_pause, button_save, gitLink, info; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -23,6 +23,8 @@ function setup() {
     
     fr = createP('');
     freq_text = createP('Frequency Slider');
+    info = createP('Save Frame option only works on single frames for now. Pause the sim before saving for accuracy. <br> Credits: Aryan Sachdeva');
+    info.position(10,800);
     
     test = createSlider(1,6,4,.5);
 
