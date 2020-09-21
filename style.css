@@ -24,3 +24,7 @@ body, html {
     vertical-align: middle;
     font-size: 40px;
 }
+
+p   {
+    color: beige;
+}

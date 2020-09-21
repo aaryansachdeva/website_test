@@ -5,12 +5,12 @@ var cols, rows;
 
 var zoff = 0;
 
-var fr;
+var fr,freq_text;
 
 var particles = [];
 
 var flowfield;
-let test;
+let test, button; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -20,8 +20,15 @@ function setup() {
 	//capturer.start();
     cols = floor(width/scl);
     rows = floor(height/scl);
+    
     fr = createP('');
+    freq_text = createP('Frequency Slider');
+
     test = createSlider(1,6,4,.5);
+
+    button = createButton('Reset Sim');
+    button.mousePressed(clearScreen);
+
     flowfield = new Array(cols * rows);
 
     for(var i = 0; i < 500; i++){
@@ -45,7 +52,7 @@ function draw() {
             v.setMag(1);
             flowfield[index] = v;
             xoff += inc;
-            stroke(0, 80);
+            stroke(0,80);
             //push();
             //translate(x * scl, y * scl);
             //rotate(v.heading());
@@ -64,7 +71,9 @@ function draw() {
     }
 
 
-    fr.html(floor(frameRate()));
+    fr.html("Framerate " + floor(frameRate()));
+
+    
     /*if (frameCount < gifLength) {
 		capturer.capture(canvas);
     }
@@ -73,4 +82,8 @@ function draw() {
 		capturer.save();
 	}*/
 
+}
+
+function clearScreen() {
+    background(255);
 }
