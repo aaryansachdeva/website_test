@@ -1,0 +1,25 @@
+@font-face  {
+    font-family: futura;
+    src: url(futura_main.tff);
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #1b1b1b;
+  }
+
+#main_div   {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    
+}
+
+#main_text  {
+    font-family: futura;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+}
