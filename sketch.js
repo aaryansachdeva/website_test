@@ -24,7 +24,7 @@ function setup() {
     fr = createP('');
     freq_text = createP('Frequency Slider');
     info = createP('Save Frame option only works on single frames for now. Pause the sim before saving for accuracy. <br> Credits: Aryan Sachdeva');
-    info.position(10,800);
+    info.position(10,830);
     
     noise_freq = createSlider(1,6,4,.5);
 
@@ -36,16 +36,19 @@ function setup() {
 
     button_clear = createButton('Reset Sim');
     button_clear.mousePressed(clearScreen);
+    button_clear.position(10,780);
 
     button_pause = createButton('Pause Sim');
     button_pause.mousePressed(pauseScreen);
+    button_pause.position(100,780);
 
     button_save = createButton('Save Frame');
     button_save.mousePressed(saveFrame);
+    button_save.position(190,780);
     
 
     gitLink = createA("https://github.com/aaryansachdeva/website_test","Link to Repo!","_blank");
-    gitLink.position(10,780);
+    gitLink.position(10,810);
 
     flowfield = new Array(cols * rows);
 
