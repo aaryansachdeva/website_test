@@ -10,7 +10,7 @@ var fr,freq_text;
 var particles = [];
 var pause = 0;
 var flowfield;
-let noise_freq, noise_scale, button_clear, button_pause, button_save, gitLink, info; //UI Elements
+let noise_freq, noise_scale, noise_scale_text, button_clear, button_pause, button_save, gitLink, info; //UI Elements
 //let canvas;
 //let gifLength = 2000;
 function setup() {
@@ -24,10 +24,14 @@ function setup() {
     fr = createP('');
     freq_text = createP('Frequency Slider');
     info = createP('Save Frame option only works on single frames for now. Pause the sim before saving for accuracy. <br> Credits: Aryan Sachdeva');
-    info.position(10,770);
+    info.position(10,800);
     
     noise_freq = createSlider(1,6,4,.5);
+
+    noise_scale_text = createP('Noise Scale');
+    noise_scale_text.position(10,710);
     noise_scale = createSlider(.001,.5,.1,.10);
+    noise_scale.position(10,750);
     
 
     button_clear = createButton('Reset Sim');
@@ -41,7 +45,7 @@ function setup() {
     
 
     gitLink = createA("https://github.com/aaryansachdeva/website_test","Link to Repo!","_blank");
-    gitLink.position(10,750);
+    gitLink.position(10,780);
 
     flowfield = new Array(cols * rows);
 
